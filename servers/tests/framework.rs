@@ -106,9 +106,9 @@ impl Default for LocalServerContainerConfig {
 		LocalServerContainerConfig {
 			name: String::from("test_host"),
 			base_addr: String::from("127.0.0.1"),
-			api_server_port: 13413,
-			p2p_server_port: 13414,
-			wallet_port: 13415,
+			api_server_port: 11773,
+			p2p_server_port: 11776,
+			wallet_port: 11777,
 			owner_port: 13420,
 			owner_api_include_foreign: false,
 			seed_addr: String::from(""),
@@ -665,10 +665,10 @@ pub fn config(n: u16, test_name_dir: &str, seed_n: u16) -> servers::ServerConfig
 pub fn stratum_config() -> servers::common::types::StratumServerConfig {
 	servers::common::types::StratumServerConfig {
 		enable_stratum_server: Some(true),
-		stratum_server_addr: Some(String::from("127.0.0.1:13416")),
+		stratum_server_addr: Some(String::from("127.0.0.1:11781")),
 		attempt_time_per_block: 60,
 		minimum_share_difficulty: 1,
-		wallet_listener_url: String::from("http://127.0.0.1:13415"),
+		wallet_listener_url: String::from("http://127.0.0.1:11777"),
 		burn_reward: false,
 	}
 }

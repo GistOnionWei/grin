@@ -4,7 +4,7 @@ This document contains the documentation for the 3 Libercoin REST APIs. These en
 
 ## Node API
 
-This endpoint is used to query a node about various information on the blockchain, networks and peers. By default, this REST API will listen on `localhost:3413`. This API is started as the same time as the Libercoin node.
+This endpoint is used to query a node about various information on the blockchain, networks and peers. By default, this REST API will listen on `localhost:1773`. This API is started as the same time as the Libercoin node.
 This endpoint requires, by default, [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The username is `libercoin` and the password can be found in the `.api_secret` file.
 To learn about what specific calls can be made read the [node API doc](node_api.md).
 
@@ -12,7 +12,7 @@ To learn about what specific calls can be made read the [node API doc](node_api.
 
 ### Foreign Wallet API
 
-The foreign API is an endpoint mainly designed to receiving libercoins through a network. This REST API can be started with the `libercoin wallet listen` command and by default will listen on `localhost:3415`.
+The foreign API is an endpoint mainly designed to receiving libercoins through a network. This REST API can be started with the `libercoin wallet listen` command and by default will listen on `localhost:1777`.
 To learn about what specific calls can be made read the [wallet foreign API doc](wallet_foreign_api.md).
 
 ### Wallet Owner API

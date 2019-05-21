@@ -175,7 +175,7 @@ fn comments() -> HashMap<String, String> {
 	retval.insert(
 		"[server.p2p_config]".to_string(),
 		"#test miner wallet URL (burns if this doesn't exist)
-#test_miner_wallet_url = \"http://127.0.0.1:3415\"
+#test_miner_wallet_url = \"http://127.0.0.1:1777\"
 
 #########################################
 ### SERVER P2P CONFIGURATION          ###
@@ -215,15 +215,15 @@ fn comments() -> HashMap<String, String> {
 		"[server.p2p_config.capabilities]".to_string(),
 		"#If the seeding type is List, the list of peers to connect to can
 #be specified as follows:
-#seeds = [\"192.168.0.1:3414\",\"192.168.0.2:3414\"]
+#seeds = [\"192.168.0.1:1776\",\"192.168.0.2:1776\"]
 
 #hardcoded peer lists for allow/deny
 #will *only* connect to peers in allow list
-#peers_allow = [\"192.168.0.1:3414\", \"192.168.0.2:3414\"]
+#peers_allow = [\"192.168.0.1:1776\", \"192.168.0.2:1776\"]
 #will *never* connect to peers in deny list
-#peers_deny = [\"192.168.0.3:3414\", \"192.168.0.4:3414\"]
+#peers_deny = [\"192.168.0.3:1776\", \"192.168.0.4:1776\"]
 #a list of preferred peers to connect to
-#peers_preferred = [\"192.168.0.1:3414\",\"192.168.0.2:3414\"]
+#peers_preferred = [\"192.168.0.1:1776\",\"192.168.0.2:1776\"]
 
 #how long a banned peer should stay banned
 #ban_window = 10800

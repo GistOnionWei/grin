@@ -42,7 +42,7 @@ RUN libercoin --floonet server config && \
 
 VOLUME ["/root/.libercoin"]
 
-EXPOSE 13413 13414 13415 13416
+EXPOSE 11773 11776 11777 11781
 
 ENTRYPOINT ["libercoin", "--floonet"]
 

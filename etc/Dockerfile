@@ -42,7 +42,7 @@ RUN libercoin server config && \
 
 VOLUME ["/root/.libercoin"]
 
-EXPOSE 3413 3414 3415 3416
+EXPOSE 1773 1776 1777 1781
 
 ENTRYPOINT ["libercoin"]
 

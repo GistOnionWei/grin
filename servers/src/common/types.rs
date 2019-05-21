@@ -180,7 +180,7 @@ impl Default for ServerConfig {
 	fn default() -> ServerConfig {
 		ServerConfig {
 			db_root: "libercoin_chain".to_string(),
-			api_http_addr: "127.0.0.1:3413".to_string(),
+			api_http_addr: "127.0.0.1:1773".to_string(),
 			api_secret_path: Some(".api_secret".to_string()),
 			tls_certificate_file: None,
 			tls_certificate_key: None,
@@ -228,12 +228,12 @@ pub struct StratumServerConfig {
 impl Default for StratumServerConfig {
 	fn default() -> StratumServerConfig {
 		StratumServerConfig {
-			wallet_listener_url: "http://127.0.0.1:3415".to_string(),
+			wallet_listener_url: "http://127.0.0.1:1777".to_string(),
 			burn_reward: false,
 			attempt_time_per_block: 15,
 			minimum_share_difficulty: 1,
 			enable_stratum_server: Some(false),
-			stratum_server_addr: Some("127.0.0.1:3416".to_string()),
+			stratum_server_addr: Some("127.0.0.1:1781".to_string()),
 		}
 	}
 }
