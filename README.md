@@ -1,47 +1,52 @@
-[![Build Status](https://travis-ci.org/mimblewimble/grin.svg?branch=master)](https://travis-ci.org/mimblewimble/grin)
-[![Gitter chat](https://badges.gitter.im/grin_community/Lobby.png)](https://gitter.im/grin_community/Lobby)
-[![Support chat](https://badges.gitter.im/grin_community/Lobby.png)](https://gitter.im/grin_community/support)
-[![Codecov coverage status](https://codecov.io/gh/mimblewimble/grin/branch/master/graph/badge.svg)](https://codecov.io/gh/mimblewimble/grin)
+# Libercoin Quark
 
-# Grin
-
-Grin is an in-progress implementation of the MimbleWimble protocol. Many characteristics are still undefined but the following constitutes a first set of choices:
+Libercoin is implementation of the MimbleWimble protocol. Many characteristics are still undefined but the following constitutes a first set of choices:
 
   * Clean and minimal implementation, and aiming to stay as such.
   * Follows the MimbleWimble protocol, which provides great anonymity and scaling characteristics.
   * Cuckoo Cycle proof of work in two variants named Cuckaroo (ASIC-resistant) and Cuckatoo (ASIC-targeted).
   * Relatively fast block time: one minute.
-  * Fixed block reward over time with a decreasing dilution.
   * Transaction fees are based on the number of Outputs created/destroyed and total transaction size.
   * Smooth curve for difficulty adjustments.
 
-To learn more, read our [introduction to MimbleWimble and Grin](doc/intro.md).
+To learn more, read our introduction to MimbleWimble and Libercoin.
 
 ## Status
 
-Grin is live with mainnet. Still, much is left to be done and [contributions](CONTRIBUTING.md) are welcome (see below). Check our [mailing list archives](https://lists.launchpad.net/mimblewimble/) for the latest status.
+Libercoin is under development and much is left to be done. [Contributions](CONTRIBUTING.md) are welcomed (see below).
 
 ## Contributing
 
 To get involved, read our [contributing docs](CONTRIBUTING.md).
 
-Find us:
+## Follow to:
 
-* Chat: [Gitter](https://gitter.im/grin_community/Lobby).
-* Mailing list: join the [~MimbleWimble team](https://launchpad.net/~mimblewimble) and subscribe on Launchpad.
-* Twitter for the Grin council: [@grincouncil](https://twitter.com/grincouncil)
+* Our Telegram [chat](https://t.me/libercoin_community) and [channel](https://t.me/libercoin_project);
+* Libercoin [blog](https://twitter.com/libercoin_project) on Twitter.
 
 ## Getting Started
 
 To learn more about the technology, read our [introduction](doc/intro.md).
 
-To build and try out Grin, see the [build docs](doc/build.md).
+To build and try out Libercoin, see the [build docs](doc/build.md).
 
 ## Philosophy
 
-Grin likes itself small and easy on the eyes. It wants to be inclusive and welcoming for all walks of life, without judgement. Grin is terribly ambitious, but not at the detriment of others, rather to further us all. It may have strong opinions to stay in line with its objectives, which doesn't mean disrespect of others' ideas.
+TBA.
 
-We believe in pull requests, data and scientific research. We do not believe in unfounded beliefs.
+## Donate and support
+
+Donate:
+
+  * BTC: bc1qhpucs40tz95me88q7jjth37pf83a665ucj7ruc
+  * LTC: Lc1bxh3ckdnXNDMAeJCjNQhPRSkg75FWWh
+  * DOGE: D8PHSm7fWYaThDfft3WgKBZtZ8fCNktkD8
+  * ETC: 0x38afCC63476C0F39c2320Cd4D013C53b56fc1548
+  * XMR: 46o7iqfQa1WE9cb12dFzdHGYRDxpz6s5Z2teDpAKe8cydnnQ3cXXJTrj26FUv6NXD77yFbk56mpTyYz4enPkDZdbSE3dty7
+  * ZCL: t1Y8rr9fCmFXHT955dF4q4vhfpF3Esn5Rrz
+  * GRN: TBA
+
+Merch-shop - comming soon.
 
 ## Credits
 
@@ -52,6 +57,8 @@ Andrew Poelstra for his related work and improvements.
 John Tromp for the Cuckoo Cycle proof of work.
 
 J.K. Rowling for making it despite extraordinary adversity.
+
+Grin Developers Team for the first implementation of MimbleWimble protocol. 
 
 ## License
 
