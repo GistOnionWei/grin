@@ -24,7 +24,7 @@ zip = { version = "0.4", default-features = false }
 parking_lot = {version = "0.6"}
 zeroize = "0.5.2"
 
-[dependencies.libercoin_secp256k1zkp]
+[dependencies.grin_secp256k1zkp]
 #git = "https://github.com/mimblewimble/rust-secp256k1-zkp"
 #tag = "libercoin_integration_29"
 #path = "../../rust-secp256k1-zkp"
