@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,16 +16,16 @@
 //! Common test functions
 
 use crate::keychain::{Identifier, Keychain};
-use grin_core::core::{
+use libercoin_core::core::{
 	block::{Block, BlockHeader},
 	Transaction,
 };
-use grin_core::libtx::{
+use libercoin_core::libtx::{
 	build::{self, input, output, with_fee},
 	reward,
 };
-use grin_core::pow::Difficulty;
-use grin_keychain as keychain;
+use libercoin_core::pow::Difficulty;
+use libercoin_keychain as keychain;
 
 // utility producing a transaction with 2 inputs and a single outputs
 pub fn tx2i1o() -> Transaction {

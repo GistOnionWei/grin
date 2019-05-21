@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-//! Grin server implementation, glues the different parts of the system (mostly
+//! Libercoin server implementation, glues the different parts of the system (mostly
 //! the peer-to-peer server, the blockchain and the transaction pool) and acts
 //! as a facade.
 
@@ -31,7 +32,7 @@ use crate::common::types::{Error, ServerConfig, StratumServerConfig, SyncState, 
 use crate::core::core::hash::{Hashed, ZERO_HASH};
 use crate::core::core::verifier_cache::{LruVerifierCache, VerifierCache};
 use crate::core::{consensus, genesis, global, pow};
-use crate::grin::{dandelion_monitor, seed, sync};
+use crate::libercoin::{dandelion_monitor, seed, sync};
 use crate::mining::stratumserver;
 use crate::mining::test_miner::Miner;
 use crate::p2p;
@@ -40,7 +41,7 @@ use crate::store;
 use crate::util::file::get_first_line;
 use crate::util::{Mutex, RwLock, StopState};
 
-/// Grin server holding internal structures.
+/// Libercoin server holding internal structures.
 pub struct Server {
 	/// server config
 	pub config: ServerConfig,
@@ -257,7 +258,7 @@ impl Server {
 			stop_state.clone(),
 		);
 
-		warn!("Grin server started.");
+		warn!("Libercoin server started.");
 		Ok(Server {
 			config,
 			p2p: p2p_server,

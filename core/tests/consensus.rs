@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -12,7 +13,7 @@
 // limitations under the License.
 
 //! core consensus.rs tests (separated to de-clutter consensus.rs)
-use grin_core as core;
+use libercoin_core as core;
 
 use self::core::consensus::*;
 use self::core::global;

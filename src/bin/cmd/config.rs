@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,8 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// Grin configuration file output command
-use crate::config::{GlobalConfig, GlobalWalletConfig, GRIN_WALLET_DIR};
+/// Libercoin configuration file output command
+use crate::config::{GlobalConfig, GlobalWalletConfig, LIBERCOIN_WALLET_DIR};
 use crate::core::global;
 use std::env;
 
@@ -54,7 +55,7 @@ pub fn config_command_wallet(chain_type: &global::ChainTypes, file_name: &str) {
 	config_file_name.push(file_name);
 
 	let mut data_dir_name = current_dir.clone();
-	data_dir_name.push(GRIN_WALLET_DIR);
+	data_dir_name.push(LIBERCOIN_WALLET_DIR);
 
 	if config_file_name.exists() && data_dir_name.exists() {
 		panic!(

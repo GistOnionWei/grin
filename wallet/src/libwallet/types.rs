@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +26,7 @@ use crate::util::secp::key::{PublicKey, SecretKey};
 use crate::util::secp::{self, pedersen, Secp256k1};
 use chrono::prelude::*;
 use failure::ResultExt;
-use grin_core::libtx::slate::ParticipantMessages;
+use libercoin_core::libtx::slate::ParticipantMessages;
 use serde;
 use serde_json;
 use std::collections::HashMap;
@@ -210,13 +211,13 @@ pub trait NodeClient: Sync + Send + Clone {
 	/// Change the API secret
 	fn set_node_api_secret(&mut self, node_api_secret: Option<String>);
 
-	/// Posts a transaction to a grin node
+	/// Posts a transaction to a libercoin node
 	fn post_tx(&self, tx: &TxWrapper, fluff: bool) -> Result<(), Error>;
 
-	/// retrieves the current tip from the specified grin node
+	/// retrieves the current tip from the specified libercoin node
 	fn get_chain_height(&self) -> Result<u64, Error>;
 
-	/// retrieve a list of outputs from the specified grin node
+	/// retrieve a list of outputs from the specified libercoin node
 	/// need "by_height" and "by_id" variants
 	fn get_outputs_from_node(
 		&self,

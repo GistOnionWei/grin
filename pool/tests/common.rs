@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,12 +26,12 @@ use self::pool::types::*;
 use self::pool::TransactionPool;
 use self::util::secp::pedersen::Commitment;
 use self::util::RwLock;
-use grin_chain as chain;
-use grin_core as core;
-use grin_keychain as keychain;
-use grin_pool as pool;
-use grin_store as store;
-use grin_util as util;
+use libercoin_chain as chain;
+use libercoin_core as core;
+use libercoin_keychain as keychain;
+use libercoin_pool as pool;
+use libercoin_store as store;
+use libercoin_util as util;
 use std::collections::HashSet;
 use std::fs;
 use std::sync::Arc;

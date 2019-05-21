@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +35,7 @@ use crate::core::Transaction;
 
 pub use crate::libtx::error::{Error, ErrorKind};
 
-const DEFAULT_BASE_FEE: u64 = consensus::MILLI_GRIN;
+const DEFAULT_BASE_FEE: u64 = consensus::MILLI_LIBERCOIN;
 
 /// Transaction fee calculation
 pub fn tx_fee(

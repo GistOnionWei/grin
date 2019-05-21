@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,14 +22,14 @@ fn comments() -> HashMap<String, String> {
 	retval.insert(
 		"[server]".to_string(),
 		"
-# Generated Server Configuration File for Grin
+# Generated Server Configuration File for Libercoin
 #
-# When running the grin executable without specifying any command line
+# When running the libercoin executable without specifying any command line
 # arguments, it will look for this file in two places, in the following
 # order:
 #
 # -The working directory
-# -[user home]/.grin
+# -[user home]/.libercoin
 #
 
 #########################################
@@ -65,7 +66,7 @@ fn comments() -> HashMap<String, String> {
 	retval.insert(
 		"db_root".to_string(),
 		"
-#the directory, relative to current, in which the grin blockchain
+#the directory, relative to current, in which the libercoin blockchain
 #is stored
 "
 		.to_string(),
@@ -125,7 +126,7 @@ fn comments() -> HashMap<String, String> {
 		"
 #Whether to run a test miner. This is only for developer testing (chaintype
 #usertesting) at cuckoo 16, and will only mine into the default wallet port.
-#real mining should use the standalone grin-miner
+#real mining should use the standalone libercoin-miner
 "
 		.to_string(),
 	);
@@ -358,7 +359,7 @@ fn comments() -> HashMap<String, String> {
 	retval.insert(
 		"api_listen_interface".to_string(),
 		"
-#host IP for wallet listener, change to \"0.0.0.0\" to receive grins
+#host IP for wallet listener, change to \"0.0.0.0\" to receive libercoins
 "
 		.to_string(),
 	);
@@ -402,7 +403,7 @@ fn comments() -> HashMap<String, String> {
 	retval.insert(
 		"node_api_secret_path".to_string(),
 		"
-#location of the node api secret for basic auth on the Grin API
+#location of the node api secret for basic auth on the Libercoin API
 "
 		.to_string(),
 	);

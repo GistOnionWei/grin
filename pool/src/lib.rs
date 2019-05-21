@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,9 +22,9 @@
 #![deny(unused_mut)]
 
 //extern crate blake2_rfc as blake2;
-//extern crate grin_core as core;
-//extern crate grin_keychain as keychain;
-//extern crate grin_util as util;
+//extern crate libercoin_core as core;
+//extern crate libercoin_keychain as keychain;
+//extern crate libercoin_util as util;
 #[allow(unused_imports)]
 #[macro_use] // Needed for Serialize/Deserialize. The compiler complaining here is a bug.
 extern crate serde_derive;

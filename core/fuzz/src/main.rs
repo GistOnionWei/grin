@@ -1,14 +1,14 @@
-extern crate grin_core;
-extern crate grin_keychain;
-extern crate grin_wallet;
+extern crate libercoin_core;
+extern crate libercoin_keychain;
+extern crate libercoin_wallet;
 
-use grin_core::core::target::Difficulty;
-use grin_core::core::{Block, BlockHeader, CompactBlock, Transaction};
-use grin_core::libtx::build::{input, output, transaction, with_fee};
-use grin_core::libtx::reward;
-use grin_core::ser;
-use grin_keychain::keychain::ExtKeychain;
-use grin_keychain::Keychain;
+use libercoin_core::core::target::Difficulty;
+use libercoin_core::core::{Block, BlockHeader, CompactBlock, Transaction};
+use libercoin_core::libtx::build::{input, output, transaction, with_fee};
+use libercoin_core::libtx::reward;
+use libercoin_core::ser;
+use libercoin_keychain::keychain::ExtKeychain;
+use libercoin_keychain::Keychain;
 use std::fs::{self, File};
 use std::path::Path;
 

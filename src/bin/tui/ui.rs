@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -63,7 +64,7 @@ impl UI {
 	/// Create a new UI
 	pub fn new(controller_tx: mpsc::Sender<ControllerMessage>) -> UI {
 		let (ui_tx, ui_rx) = mpsc::channel::<UIMessage>();
-		let mut grin_ui = UI {
+		let mut libercoin_ui = UI {
 			cursive: Cursive::default(),
 			ui_tx: ui_tx,
 			ui_rx: ui_rx,
@@ -88,7 +89,7 @@ impl UI {
 
 		let mut title_string = StyledString::new();
 		title_string.append(StyledString::styled(
-			format!("Grin Version {}", built_info::PKG_VERSION),
+			format!("Libercoin Version {}", built_info::PKG_VERSION),
 			Color::Dark(BaseColor::Green),
 		));
 
@@ -101,20 +102,20 @@ impl UI {
 			);
 
 		//set theme
-		let mut theme = grin_ui.cursive.current_theme().clone();
+		let mut theme = libercoin_ui.cursive.current_theme().clone();
 		modify_theme(&mut theme);
-		grin_ui.cursive.set_theme(theme);
-		grin_ui.cursive.add_fullscreen_layer(main_layer);
+		libercoin_ui.cursive.set_theme(theme);
+		libercoin_ui.cursive.add_fullscreen_layer(main_layer);
 
 		// Configure a callback (shutdown, for the first test)
-		let controller_tx_clone = grin_ui.controller_tx.clone();
-		grin_ui.cursive.add_global_callback('q', move |_| {
+		let controller_tx_clone = libercoin_ui.controller_tx.clone();
+		libercoin_ui.cursive.add_global_callback('q', move |_| {
 			controller_tx_clone
 				.send(ControllerMessage::Shutdown)
 				.unwrap();
 		});
-		grin_ui.cursive.set_fps(4);
-		grin_ui
+		libercoin_ui.cursive.set_fps(4);
+		libercoin_ui
 	}
 
 	/// Step the UI by calling into Cursive's step function, then

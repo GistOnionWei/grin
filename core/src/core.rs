@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +26,7 @@ pub mod pmmr;
 pub mod transaction;
 pub mod verifier_cache;
 
-use crate::consensus::GRIN_BASE;
+use crate::consensus::LIBERCOIN_BASE;
 
 use crate::util::secp::pedersen::Commitment;
 
@@ -52,17 +53,17 @@ pub fn amount_from_hr_string(amount: &str) -> Result<u64, Error> {
 	if amount.find(',').is_some() {
 		return Err(Error::InvalidAmountString);
 	}
-	let (grins, ngrins) = match amount.find('.') {
-		None => (parse_grins(amount)?, 0),
+	let (libercoins, nlibercoins) = match amount.find('.') {
+		None => (parse_libercoins(amount)?, 0),
 		Some(pos) => {
 			let (gs, tail) = amount.split_at(pos);
-			(parse_grins(gs)?, parse_ngrins(&tail[1..])?)
+			(parse_libercoins(gs)?, parse_nlibercoins(&tail[1..])?)
 		}
 	};
-	Ok(grins * GRIN_BASE + ngrins)
+	Ok(libercoins * LIBERCOIN_BASE + nlibercoins)
 }
 
-fn parse_grins(amount: &str) -> Result<u64, Error> {
+fn parse_libercoins(amount: &str) -> Result<u64, Error> {
 	if amount == "" {
 		Ok(0)
 	} else {
@@ -73,10 +74,10 @@ fn parse_grins(amount: &str) -> Result<u64, Error> {
 }
 
 lazy_static! {
-	static ref WIDTH: usize = (GRIN_BASE as f64).log(10.0) as usize + 1;
+	static ref WIDTH: usize = (LIBERCOIN_BASE as f64).log(10.0) as usize + 1;
 }
 
-fn parse_ngrins(amount: &str) -> Result<u64, Error> {
+fn parse_nlibercoins(amount: &str) -> Result<u64, Error> {
 	let amount = if amount.len() > *WIDTH {
 		&amount[..*WIDTH]
 	} else {
@@ -90,7 +91,7 @@ fn parse_ngrins(amount: &str) -> Result<u64, Error> {
 /// Common method for converting an amount to a human-readable string
 
 pub fn amount_to_hr_string(amount: u64, truncate: bool) -> String {
-	let amount = (amount as f64 / GRIN_BASE as f64) as f64;
+	let amount = (amount as f64 / LIBERCOIN_BASE as f64) as f64;
 	let hr = format!("{:.*}", WIDTH, amount);
 	if truncate {
 		let nzeros = hr.chars().rev().take_while(|x| x == &'0').count();

@@ -1,6 +1,6 @@
 
 [package]
-name = "grin_p2p-fuzz"
+name = "libercoin_p2p-fuzz"
 version = "0.0.1"
 authors = ["Automatically generated"]
 publish = false
@@ -8,9 +8,9 @@ publish = false
 [package.metadata]
 cargo-fuzz = true
 
-[dependencies.grin_p2p]
+[dependencies.libercoin_p2p]
 path = ".."
-[dependencies.grin_core]
+[dependencies.libercoin_core]
 path = "../../core"
 [dependencies.libfuzzer-sys]
 git = "https://github.com/rust-fuzz/libfuzzer-sys.git"

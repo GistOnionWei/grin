@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,19 +34,19 @@ use crate::util::{Mutex, StopState};
 
 // DNS Seeds with contact email associated
 const MAINNET_DNS_SEEDS: &'static [&'static str] = &[
-	"mainnet.seed.grin-tech.org",      // igno.peverell@protonmail.com
-	"mainnet.seed.grin.icu",           // gary.peverell@protonmail.com
+	"mainnet.seed.libercoin-tech.org",      // igno.peverell@protonmail.com
+	"mainnet.seed.libercoin.icu",           // gary.peverell@protonmail.com
 	"mainnet.seed.713.mw",             // jasper@713.mw
-	"mainnet.seed.grin.lesceller.com", // q.lesceller@gmail.com
-	"mainnet.seed.grin.prokapi.com",   // hendi@prokapi.com
-	"grinseed.yeastplume.org",         // yeastplume@protonmail.com
+	"mainnet.seed.libercoin.lesceller.com", // q.lesceller@gmail.com
+	"mainnet.seed.libercoin.prokapi.com",   // hendi@prokapi.com
+	"libercoinseed.yeastplume.org",         // yeastplume@protonmail.com
 ];
 const FLOONET_DNS_SEEDS: &'static [&'static str] = &[
-	"floonet.seed.grin-tech.org",      // igno.peverell@protonmail.com
-	"floonet.seed.grin.icu",           // gary.peverell@protonmail.com
+	"floonet.seed.libercoin-tech.org",      // igno.peverell@protonmail.com
+	"floonet.seed.libercoin.icu",           // gary.peverell@protonmail.com
 	"floonet.seed.713.mw",             // jasper@713.mw
-	"floonet.seed.grin.lesceller.com", // q.lesceller@gmail.com
-	"floonet.seed.grin.prokapi.com",   // hendi@prokapi.com
+	"floonet.seed.libercoin.lesceller.com", // q.lesceller@gmail.com
+	"floonet.seed.libercoin.prokapi.com",   // hendi@prokapi.com
 ];
 
 pub fn connect_and_monitor(

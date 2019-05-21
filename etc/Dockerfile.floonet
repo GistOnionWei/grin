@@ -14,12 +14,12 @@ RUN set -ex && \
     cmake \
     git
 
-WORKDIR /usr/src/grin
+WORKDIR /usr/src/libercoin
 
-# Copying Grin
+# Copying Libercoin
 COPY . .
 
-# Building Grin
+# Building Libercoin
 RUN cargo build --release
 
 # runtime stage
@@ -33,17 +33,17 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
 
 ENV LANG en_US.UTF-8
 
-COPY --from=builder /usr/src/grin/target/release/grin /usr/local/bin/grin
+COPY --from=builder /usr/src/libercoin/target/release/libercoin /usr/local/bin/libercoin
 
-WORKDIR /root/.grin
+WORKDIR /root/.libercoin
 
-RUN grin --floonet server config && \
-    sed -i -e 's/run_tui = true/run_tui = false/' grin-server.toml
+RUN libercoin --floonet server config && \
+    sed -i -e 's/run_tui = true/run_tui = false/' libercoin-server.toml
 
-VOLUME ["/root/.grin"]
+VOLUME ["/root/.libercoin"]
 
 EXPOSE 13413 13414 13415 13416
 
-ENTRYPOINT ["grin", "--floonet"]
+ENTRYPOINT ["libercoin", "--floonet"]
 
 CMD ["server", "run"]

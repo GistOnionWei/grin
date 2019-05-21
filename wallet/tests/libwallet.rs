@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -19,10 +20,10 @@ use self::util::secp;
 use self::util::secp::key::{PublicKey, SecretKey};
 use self::wallet::libwallet::types::Context;
 use self::wallet::{EncryptedWalletSeed, WalletSeed};
-use grin_core as core;
-use grin_keychain as keychain;
-use grin_util as util;
-use grin_wallet as wallet;
+use libercoin_core as core;
+use libercoin_keychain as keychain;
+use libercoin_util as util;
+use libercoin_wallet as wallet;
 use rand::thread_rng;
 
 fn kernel_sig_msg() -> secp::Message {

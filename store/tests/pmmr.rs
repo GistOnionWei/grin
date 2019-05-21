@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,8 +14,8 @@
 // limitations under the License.
 
 use env_logger;
-use grin_core as core;
-use grin_store as store;
+use libercoin_core as core;
+use libercoin_store as store;
 
 use std::fs;
 

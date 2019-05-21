@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +26,7 @@ use crate::lmdb;
 use crate::core::ser::{self, Readable, Reader, Writeable, Writer};
 use crate::msg::SockAddr;
 use crate::types::{Capabilities, ReasonForBan};
-use grin_store::{self, option_to_not_found, to_key, Error};
+use libercoin_store::{self, option_to_not_found, to_key, Error};
 
 const STORE_SUBPATH: &'static str = "peers";
 
@@ -114,13 +115,13 @@ impl Readable for PeerData {
 
 /// Storage facility for peer data.
 pub struct PeerStore {
-	db: grin_store::Store,
+	db: libercoin_store::Store,
 }
 
 impl PeerStore {
 	/// Instantiates a new peer store under the provided root path.
 	pub fn new(db_env: Arc<lmdb::Environment>) -> Result<PeerStore, Error> {
-		let db = grin_store::Store::open(db_env, STORE_SUBPATH);
+		let db = libercoin_store::Store::open(db_env, STORE_SUBPATH);
 		Ok(PeerStore { db: db })
 	}
 

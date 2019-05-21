@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// Grin client commands processing
+/// Libercoin client commands processing
 use std::net::SocketAddr;
 
 use clap::ArgMatches;
@@ -54,14 +55,14 @@ pub fn client_command(client_args: &ArgMatches<'_>, global_config: GlobalConfig)
 				panic!("Invalid peer address format");
 			}
 		}
-		_ => panic!("Unknown client command, use 'grin help client' for details"),
+		_ => panic!("Unknown client command, use 'libercoin help client' for details"),
 	}
 	0
 }
 
 pub fn show_status(config: &ServerConfig, api_secret: Option<String>) {
 	println!();
-	let title = format!("Grin Server Status");
+	let title = format!("Libercoin Server Status");
 	let mut t = term::stdout().unwrap();
 	let mut e = term::stdout().unwrap();
 	t.fg(term::color::MAGENTA).unwrap();
@@ -80,7 +81,7 @@ pub fn show_status(config: &ServerConfig, api_secret: Option<String>) {
 		}
 		Err(_) => writeln!(
 			e,
-			"WARNING: Client failed to get data. Is your `grin server` offline or broken?"
+			"WARNING: Client failed to get data. Is your `libercoin server` offline or broken?"
 		)
 		.unwrap(),
 	};

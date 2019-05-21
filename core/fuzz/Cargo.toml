@@ -1,5 +1,5 @@
 [package]
-name = "grin_core-fuzz"
+name = "libercoin_core-fuzz"
 version = "0.0.3"
 authors = ["Grin Developers <mimblewimble@lists.launchpad.net>"]
 publish = false
@@ -8,9 +8,9 @@ publish = false
 cargo-fuzz = true
 
 [dependencies]
-grin_core = { path = ".."}
-grin_keychain = { path = "../../keychain"}
-grin_wallet = { path = "../../wallet"}
+libercoin_core = { path = ".."}
+libercoin_keychain = { path = "../../keychain"}
+libercoin_wallet = { path = "../../wallet"}
 [dependencies.libfuzzer-sys]
 git = "https://github.com/rust-fuzz/libfuzzer-sys.git"
 

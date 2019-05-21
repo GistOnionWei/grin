@@ -1,5 +1,5 @@
-use grin_api as api;
-use grin_util as util;
+use libercoin_api as api;
+use libercoin_util as util;
 
 use crate::api::*;
 use hyper::{Body, Request};

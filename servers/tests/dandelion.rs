@@ -1,4 +1,5 @@
 // Copyright 2018 The Grin Developers
+// Copyright 2018-2019 The Libercoin Developers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,8 +20,8 @@ mod framework;
 
 use self::util::Mutex;
 use crate::framework::{LocalServerContainer, LocalServerContainerConfig};
-use grin_core as core;
-use grin_util as util;
+use libercoin_core as core;
+use libercoin_util as util;
 use std::sync::Arc;
 use std::{thread, time};
 
@@ -127,7 +128,7 @@ fn test_dandelion_timeout() {
 			LocalServerContainer::get_wallet_info(&coinbase_wallet_config, &coinbase_seed);
 	}
 
-	warn!("Sending 50 Grins to recipient wallet");
+	warn!("Sending 50 Libercoins to recipient wallet");
 
 	// Sending stem transaction
 	LocalServerContainer::send_amount_to(
