@@ -1,10 +1,10 @@
 [package]
 name = "libercoin_keychain"
 version = "1.0.1"
-authors = ["Grin Developers <mimblewimble@lists.launchpad.net>"]
+authors = ["Libercoin Developers <mimblewimble@lists.launchpad.net>"]
 description = "Chain implementation for libercoin, a simple, private and scalable cryptocurrency implementation based on the MimbleWimble chain format."
 license = "Apache-2.0"
-repository = "https://github.com/mimblewimble/libercoin"
+repository = "https://github.com/libercoinproject/libercoin"
 keywords = [ "crypto", "libercoin", "mimblewimble" ]
 workspace = '..'
 edition = "2018"
