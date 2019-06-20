@@ -39,12 +39,94 @@ pub const NANO_LIBERCOIN: u64 = 1;
 /// (adjusting the reward accordingly).
 pub const BLOCK_TIME_SEC: u64 = 60;
 
+/// Block rewards
+pub const BLOCK_REWARD: u64 = 5;
+
+/// Halvenings
+pub const HALVENING_1: u64 = 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_2: u64 = 2 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_3: u64 = 3 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_4: u64 = 4 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_5: u64 = 5 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_6: u64 = 6 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_7: u64 = 7 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_8: u64 = 8 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_9: u64 = 9 * 4 * YEAR_HEIGHT;
+/// Halvenings
+pub const HALVENING_10: u64 = 10 * 4 * YEAR_HEIGHT;
+
 /// The block subsidy amount, one libercoin per second on average
-pub const REWARD: u64 = BLOCK_TIME_SEC * LIBERCOIN_BASE;
+pub const REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE;
+/// Halvening rewards
+pub const HALVENING_1_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE;
+/// Halvening rewards
+pub const HALVENING_2_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 2;
+/// Halvening rewards
+pub const HALVENING_3_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 4;
+/// Halvening rewards
+pub const HALVENING_4_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 8;
+/// Halvening rewards
+pub const HALVENING_5_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 16;
+/// Halvening rewards
+pub const HALVENING_6_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 32;
+/// Halvening rewards
+pub const HALVENING_7_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 64;
+/// Halvening rewards
+pub const HALVENING_8_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 128;
+/// Halvening rewards
+pub const HALVENING_9_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 256;
+/// Halvening rewards
+pub const HALVENING_10_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 512;
+/// Halvening rewards
+pub const HALVENING_11_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 1024;
+/// Halvening rewards
+pub const HALVENING_12_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 2048;
+
 
 /// Actual block reward for a given total fee amount
-pub fn reward(fee: u64) -> u64 {
-	REWARD.saturating_add(fee)
+pub fn reward(fee: u64, height: u64) -> u64 {
+	reward_at_height(height).saturating_add(fee)
+
+/// Actual block reward for a given total fee amount, based on height
+pub fn reward_at_height(fee: u64, height: u64) -> u64 {
+	if height < HALVENING_1 {
+		return HALVENING_1_REWARD
+	}
+	else if height < HALVENING_2 {
+		return HALVENING_2_REWARD
+	}
+	else if height < HALVENING_3 {
+		return HALVENING_3_REWARD
+	}
+	else if height < HALVENING_4 {
+		return HALVENING_4_REWARD
+	}
+	else if height < HALVENING_5 {
+		return HALVENING_5_REWARD
+	}
+	else if height < HALVENING_6 {
+		return HALVENING_6_REWARD
+	}
+	else if height < HALVENING_7 {
+		return HALVENING_7_REWARD
+	}
+	else if height < HALVENING_8 {
+		return HALVENING_8_REWARD
+	}
+	else if height < HALVENING_9 {
+		return HALVENING_9_REWARD
+	}
+	else {
+		return HALVENING_10_REWARD
+	}
 }
 
 /// Nominal height for standard time intervals, hour is 60 blocks
@@ -303,8 +385,12 @@ where
 		CLAMP_FACTOR,
 	);
 	// minimum difficulty avoids getting stuck due to dampening
-	let difficulty = max(MIN_DIFFICULTY, diff_sum * BLOCK_TIME_SEC / adj_ts);
-
+	error!("height: {}  min_difficulty: {}  diff_sum: {}  block_time_sec: {}  adj_ts: {}", height, MIN_DIFFICULTY, diff_sum, BLOCK_TIME_SEC, adj_ts);
+	let mut difficulty = max(MIN_DIFFICULTY, diff_sum * BLOCK_TIME_SEC / adj_ts);
+	if height == 0 {
+		difficulty = INITIAL_DIFFICULTY;
+	}
+	
 	HeaderInfo::from_diff_scaling(Difficulty::from_num(difficulty), sec_pow_scaling)
 }
 

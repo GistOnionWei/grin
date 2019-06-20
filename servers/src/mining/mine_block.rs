@@ -133,7 +133,7 @@ fn build_block(
 		height,
 	};
 
-	let (output, kernel, block_fees) = get_coinbase(wallet_listener_url, block_fees)?;
+	let (output, kernel, block_fees) = get_coinbase(wallet_listener_url, block_fees, height)?;
 	let mut b = core::Block::from_reward(&head, txs, output, kernel, difficulty.difficulty)?;
 
 	// making sure we're not spending time mining a useless block
@@ -178,12 +178,12 @@ fn build_block(
 ///
 /// Probably only want to do this when testing.
 ///
-fn burn_reward(block_fees: BlockFees) -> Result<(core::Output, core::TxKernel, BlockFees), Error> {
+fn burn_reward(block_fees: BlockFees, height: u64) -> Result<(core::Output, core::TxKernel, BlockFees), Error> {
 	warn!("Burning block fees: {:?}", block_fees);
 	let keychain = ExtKeychain::from_random_seed(global::is_floonet()).unwrap();
 	let key_id = ExtKeychain::derive_key_id(1, 1, 0, 0, 0);
 	let (out, kernel) =
-		crate::core::libtx::reward::output(&keychain, &key_id, block_fees.fees).unwrap();
+		crate::core::libtx::reward::output(&keychain, &key_id, block_fees.fees, height).unwrap();
 	Ok((out, kernel, block_fees))
 }
 
@@ -192,11 +192,13 @@ fn burn_reward(block_fees: BlockFees) -> Result<(core::Output, core::TxKernel, B
 fn get_coinbase(
 	wallet_listener_url: Option<String>,
 	block_fees: BlockFees,
+	height: u64,
+
 ) -> Result<(core::Output, core::TxKernel, BlockFees), Error> {
 	match wallet_listener_url {
 		None => {
 			// Burn it
-			return burn_reward(block_fees);
+			return burn_reward(block_fees, height);
 		}
 		Some(wallet_listener_url) => {
 			let res = wallet::create_coinbase(&wallet_listener_url, &block_fees)?;
