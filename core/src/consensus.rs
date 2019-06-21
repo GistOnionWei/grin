@@ -64,31 +64,31 @@ pub const HALVENING_9: u64 = 9 * 4 * YEAR_HEIGHT;
 pub const HALVENING_10: u64 = 10 * 4 * YEAR_HEIGHT;
 
 /// The block subsidy amount, one libercoin per second on average
-pub const REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE;
+pub const REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE;
 /// Halvening rewards
-pub const HALVENING_1_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE;
+pub const HALVENING_1_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE;
 /// Halvening rewards
-pub const HALVENING_2_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 2;
+pub const HALVENING_2_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 2;
 /// Halvening rewards
-pub const HALVENING_3_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 4;
+pub const HALVENING_3_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 4;
 /// Halvening rewards
-pub const HALVENING_4_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 8;
+pub const HALVENING_4_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 8;
 /// Halvening rewards
-pub const HALVENING_5_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 16;
+pub const HALVENING_5_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 16;
 /// Halvening rewards
-pub const HALVENING_6_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 32;
+pub const HALVENING_6_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 32;
 /// Halvening rewards
-pub const HALVENING_7_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 64;
+pub const HALVENING_7_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 64;
 /// Halvening rewards
-pub const HALVENING_8_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 128;
+pub const HALVENING_8_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 128;
 /// Halvening rewards
-pub const HALVENING_9_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 256;
+pub const HALVENING_9_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 256;
 /// Halvening rewards
-pub const HALVENING_10_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 512;
+pub const HALVENING_10_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 512;
 /// Halvening rewards
-pub const HALVENING_11_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 1024;
+pub const HALVENING_11_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 1024;
 /// Halvening rewards
-pub const HALVENING_12_REWARD: u64 = BLOCK_REWARD * BITGRIN_BASE / 2048;
+pub const HALVENING_12_REWARD: u64 = BLOCK_REWARD * LIBERCOIN_BASE / 2048;
 
 
 /// Actual block reward for a given total fee amount
